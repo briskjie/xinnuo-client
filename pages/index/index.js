@@ -4,15 +4,15 @@ Page({
     data: {
         activeIndex: 0,
         navList: [],
-        indicatorDots: !0,
-        autoplay: !1,
+        indicatorDots: true,
+        autoplay: true,
         current: 0,
         interval: 3000,
         duration: 1000,
-        circular: !0,
+        circular: true,
         goods: {},
         prompt: {
-            hidden: !0,
+            hidden: true,
         },
     },
     swiperchange(e) {

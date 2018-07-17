@@ -12,7 +12,7 @@ Page({
     onLoad() {},
     onShow() {},
     bindload(e) {
-      setTimeout(App.WxService.getStorageSync('token') ? this.goIndex : this.goLogin, 5000)
+      setTimeout(App.WxService.getStorageSync('token') ? this.goIndex : this.goLogin, 3000)
     },
 
     //有token，一登录，跳转到首页
