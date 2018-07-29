@@ -3,8 +3,8 @@ export default {
 	// basePath: 'http://118.89.244.19:3000/api', 
   // domain: 'http://118.89.244.19:3000/', 
 
-  // basePath: 'http://xinnou.cn/api',
-  // domain: 'http://xinnou.cn/', 
+  // basePath: 'https://xinnou.cn/api',
+  // domain: 'https://xinnou.cn/', 
 
 
 	// 本地环境

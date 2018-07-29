@@ -7,3 +7,41 @@
       </block>
     </view>
 </template>
+
+
+<!-- 
+
+bindtap和catchtap都是当前用户点击该组件的时候会在页面对应的Page中找到相应的事件处理函数，并且通过onTapTag(e)中的e将自定义属性传递过去，
+例如上面的属性type和index。调用出通过下面的方法取出属性：
+ onTapTag(e) {
+    const type = e.currentTarget.dataset.type
+    const index = e.currentTarget.dataset.index
+    }
+
+
+bindtap事件不阻止冒泡事件往上冒泡
+catchtap事件阻止冒泡事件网上冒泡
+
+<view id="outer" bindtap="handleTap1">
+  	outer view
+    <view id="middle" catchtap="handleTap2">
+    middle view
+    <view id="inner" bindtap="handleTap3">
+      inner view
+    </view>
+</view>
+ 
+Page({
+    handleTap1:function(event){  //点击输出outer view bindtap
+      console.log("outer view bindtap")
+    },
+    handleTap2: function (event) {  //点击输出middle view ，handleTab2是catchtap,阻止事件往上传递
+      console.log("middle view catchtap")
+    },
+    handleTap3: function (event) {  //点击输出inner view bindtap  middle view catchtap，handleTap3是bindtap，不阻止事件往上传递
+      console.log("inner view bindtap")
+    },
+})
+
+
+ -->
