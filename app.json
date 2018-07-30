@@ -18,7 +18,8 @@
     "pages/search/index",
     "pages/about/index",
     "pages/login/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/userinfo/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#479de6",
@@ -32,27 +33,32 @@
     "selectedColor": "#479de6",
     "borderStyle": "white",
     "backgroundColor": "#fff",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "assets/images/iconfont-home.png",
-      "selectedIconPath": "assets/images/iconfont-home-active.png",
-      "text": "主页"
-    }, {
-      "pagePath": "pages/classify/index",
-      "iconPath": "assets/images/iconfont-list.png",
-      "selectedIconPath": "assets/images/iconfont-list-active.png",
-      "text": "分类"
-    }, {
-      "pagePath": "pages/cart/index",
-      "iconPath": "assets/images/iconfont-cart.png",
-      "selectedIconPath": "assets/images/iconfont-cart-active.png",
-      "text": "购物车"
-    }, {
-      "pagePath": "pages/user/index",
-      "iconPath": "assets/images/iconfont-user.png",
-      "selectedIconPath": "assets/images/iconfont-user-active.png",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/images/iconfont-home.png",
+        "selectedIconPath": "assets/images/iconfont-home-active.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/classify/index",
+        "iconPath": "assets/images/iconfont-list.png",
+        "selectedIconPath": "assets/images/iconfont-list-active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "iconPath": "assets/images/iconfont-cart.png",
+        "selectedIconPath": "assets/images/iconfont-cart-active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "assets/images/iconfont-user.png",
+        "selectedIconPath": "assets/images/iconfont-user-active.png",
+        "text": "我的"
+      }
+    ]
   },
   "debug": false
 }

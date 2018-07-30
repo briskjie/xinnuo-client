@@ -1,0 +1,10 @@
+<!--pages/userinfo/index.wxml-->
+<view>
+  <view>
+    <image src='../../assets/images/iconfont-order.png' style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <text>相册(*请您至少上传一张真人照片)</text>
+  </view>
+  <view>
+    
+  </view>
+</view>

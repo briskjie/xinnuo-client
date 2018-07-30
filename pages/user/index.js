@@ -5,6 +5,37 @@ Page({
     userInfo: {},
     items: [{
         icon: '../../assets/images/iconfont-order.png',
+        text: '我的桃花牌',
+        path: '/pages/userinfo/index',
+        desc: '编辑'
+      },
+      {
+        icon: '../../assets/images/iconfont-order.png',
+        text: '我的桃花券',
+        path: '/pages/order/list/index'
+      },
+      {
+        icon: '../../assets/images/iconfont-kefu.png',
+        text: '添加到桌面',
+        path: '18521708248',
+      },
+      {
+        icon: '../../assets/images/iconfont-kefu.png',
+        text: '关于我们',
+        path: '18521708248',
+      },
+      {
+        icon: '../../assets/images/iconfont-kefu.png',
+        text: '联系客服',
+        path: '18521708248',
+      },
+      {
+        icon: '../../assets/images/iconfont-kefu.png',
+        text: '设置',
+        path: '18521708248',
+      },
+      {
+        icon: '../../assets/images/iconfont-order.png',
         text: '我的订单',
         path: '/pages/order/list/index'
       },
@@ -43,16 +74,16 @@ Page({
   navigateTo(e) {
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path
-
-    switch (index) {
-      case 2:
-        App.WxService.makePhoneCall({
-          phoneNumber: path
-        })
-        break
-      default:
-        App.WxService.navigateTo(path)
-    }
+    App.WxService.navigateTo(path)
+    // switch (index) {
+    //   case 2:
+    //     App.WxService.makePhoneCall({
+    //       phoneNumber: path
+    //     })
+    //     break
+    //   default:
+    //     App.WxService.navigateTo(path)
+    // }
   },
   getUserInfo() {
     const userInfo = App.globalData.userInfo
