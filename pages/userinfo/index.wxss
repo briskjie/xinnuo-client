@@ -1,1 +1,36 @@
 /* pages/userinfo/index.wxss */
+
+
+
+.parent {
+    width: 100%;
+    /* background-color: black; */
+    display: flex;
+    /* flex-flow是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap   row wrap为竖向换行*/
+    flex-flow: row wrap;
+    /* align-content: space-between; */
+    /* align-content: flex-start; */
+    /* padding-left: 2%;
+    padding-right: 2%; */
+}
+
+.child {
+    /* box-sizing: border-box; */
+    /* background-color: white; */
+    width: 100px;
+    height: 100px;
+    /* border: 1px solid red; */
+    margin-top: 4%;
+    margin-left: 1%; 
+    margin-right: 1%;
+}
+
+.child .image {
+    width: 100%;
+    height: 100%;
+}
+
+.child .delete {
+    width: 30px;
+    height: 30px;
+}

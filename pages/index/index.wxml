@@ -19,6 +19,7 @@
             <icon class="weui-icon-search" type="search" size="14"></icon>
             <view class="weui-search-bar__text">搜索</view>
         </label>
+    
     </view>
 </view>
 

@@ -2,9 +2,15 @@
 <view>
   <view>
     <image src='../../assets/images/iconfont-order.png' style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-    <text>相册(*请您至少上传一张真人照片)</text>
+    <text bindtap='chooseImages'>相册</text>
   </view>
-  <view>
-    
+  <view class="parent">
+    <!-- 下面实现网格布局的父布局不能用view标签，否则使用wrap属性后会异常 -->
+    <block class="parent" wx:for = "{{tempFilePaths}}" wx:key = "{{index}}">
+      <View class="child">
+        <image class="delete" src = '../../assets/images/delete.png' data-path = "{{item}}" bindtap = "deleteImage"></image>
+        <image class="image" src="{{item}}" data-path = "{{item}}" data-index = "{{index}}" bindtap = "dispatchClickEvent"></image>
+      </View>
+    </block>
   </view>
 </view>
