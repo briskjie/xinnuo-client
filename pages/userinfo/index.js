@@ -8,7 +8,7 @@ Page({
     key: 1,
     count:6,
     total:6,
-    tempFilePaths: ['../../assets/images/add.png'] 
+    tempImagePaths: ['../../assets/images/add.png'] 
   },
 
   /**
@@ -52,20 +52,17 @@ Page({
 
   chooseWxImage(type){
     var that = this;
-    var paths = [];
-    var tempCount;
-    var flat = true;
     wx.chooseImage({
       count:that.data.count,
       sizeType:['original','compressed'],
       sourceType:[type],
       success: function(res) {
-        paths = res.tempFilePaths.concat(that.data.tempFilePaths)
-        tempCount = that.data.count-res.tempFilePaths.length;
-        // splice(0,total) 0开始，取total个元素
+       var paths = res.tempFilePaths.concat(that.data.tempImagePaths)
+       var tempCount = that.data.count-res.tempFilePaths.length
+        // splice(0,total) 0开始，取total个元素,返回截取的total个元素，原来的数组会发生变化
         that.setData({
           count: tempCount,
-          tempFilePaths: tempCount === 0 ?  paths.splice(0,that.data.total): paths
+          tempImagePaths: paths
         })
       },
     })
@@ -74,8 +71,8 @@ Page({
   //图片点击事件分发，图片预览或添加图片
   dispatchClickEvent (e) {
     const currentIndex = e.currentTarget.dataset.index;
-    if(this.data.count>0 && currentIndex== this.data.tempFilePaths.length-1){
-      this.chooseWxImage('album')
+    if(this.data.count>0 && currentIndex== this.data.tempImagePaths.length-1){
+      this.chooseImages()
     }else{
       this.previewImage(currentIndex)
     }
@@ -83,15 +80,22 @@ Page({
 
   //预览图片
   previewImage(currentIndex){
+    var paths = []
+    paths=[...paths, ...this.data.tempImagePaths]//copy到临时paths，不影响原来的tempImagePaths,然后去掉最后一张add.png
+    paths.pop()
     wx.previewImage({
-      current: currentIndex, // 当前显示图片的http链接
-      urls: this.data.tempFilePaths // 需要预览的图片http链接列表
+      current: paths[currentIndex], // 当前显示图片的http链接
+      urls: paths// 需要预览的图片http链接列表
     })
   },
 
+ //删除图片
   deleteImage(e){
+    var paths =  this.data.tempImagePaths
+    paths.splice(e.currentTarget.dataset.index, 1)//从index开始删除1个元算，即删除index元素
     this.setData({
-      tempFilePaths: this.data.tempFilePaths.remove(e.currentTarget.dataset.path)
+      count: this.data.count+1,
+      tempImagePaths: paths
     })
   },
 
