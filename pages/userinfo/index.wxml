@@ -7,7 +7,7 @@
   <view class="parent">
     <!-- 下面实现网格布局的父布局不能用view标签，否则使用wrap属性后会异常 -->
     <block class="parent" wx:for = "{{tempImagePaths}}" wx:key = "{{index}}">
-      <view class="child" hidden="{{count === 0 && index === total}}">
+      <view class="child"  style="height:{{Height}}" hidden="{{count === 0 && index === total}}">
         <image class="delete" hidden = "{{count>0 && index === tempImagePaths.length-1}}" src = '../../assets/images/delete.png' data-index = "{{index}}" bindtap = "deleteImage"></image>
         <image class="image"  src="{{item}}" data-path = "{{item}}" data-index = "{{index}}" bindtap = "dispatchClickEvent"></image>
       </view>

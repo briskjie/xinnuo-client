@@ -8,6 +8,7 @@ Page({
     key: 1,
     count:6,
     total:6,
+    Height:'',
     tempImagePaths: ['../../assets/images/add.png'] 
   },
 
@@ -15,7 +16,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this
+    wx.getSystemInfo({
+      success(res){
+        that.setData({
+          Height:res.windowWidth/3 + 'px'
+        })
+      }
+    })
   },
 
   /**
