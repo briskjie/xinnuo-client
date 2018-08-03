@@ -29,8 +29,16 @@ Page({
       id: '@id'
     })
 
+    this.qnUploadToken = App.HttpResource('/qiniu/getQnUploadToken/:id', {id: '@id'})
+    this.qnUploadToken.queryAsync({})
+    .then(res=>{
+      console.log(res)
+    })
+
+
     this.getBanners()
     this.getClassify()
+
   },
   initData() {
     /**

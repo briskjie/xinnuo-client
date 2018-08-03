@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/userinfo/index",
+    "pages/qn/qn",
     "pages/start/index",
     "pages/index/index",
     "pages/classify/index",
@@ -19,8 +19,10 @@
     "pages/search/index",
     "pages/about/index",
     "pages/login/index",
-    "pages/user/index"
-  
+    "pages/user/index",
+    "pages/userinfo/index",
+    "pages/uploadqn"
+ 
   ],
   "window": {
     "navigationBarBackgroundColor": "#479de6",

@@ -17,6 +17,7 @@ class HttpService extends WxRequest {
       cart: '/cart',
       address: '/address',
       order: '/order',
+      getQnUploadToken: 'qiniu/getQnUploadToken'
     }
     this.interceptors.use({
       request(request) {
@@ -192,6 +193,10 @@ class HttpService extends WxRequest {
 
   deleteOrder(id, params) {
     return this.deleteRequest(`${this.$$path.order}/${id}`)
+  }
+
+  getQnUploadToken(){
+    return this.getRequest(this.$$path.getQnUploadToken)
   }
 }
 
